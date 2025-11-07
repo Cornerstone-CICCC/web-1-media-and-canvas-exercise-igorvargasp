@@ -5,19 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media Exercise</title>
 </head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-image: url("assets/images/background.jpg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
 <body>
   <div class="container">
-    <!-- AUDIO HTML GOES HERE -->
+    <audio src="assets/audio/piano.wav" muted loop controls></audio>
+    <video src="assets/video/ocean.mp4" muted controls poster="assets/images/poster.jpg" width="600"></video>
 
-    <!-- VIDEO HTML GOES HERE -->
+    <img src="assets/images/fruit_table.jpg" alt="image" width="600" usemap="#image-map">
+    <map name="image-map">
+      <area shape="rect" coords="200,50,350,150" href="https://en.wikipedia.org/wiki/Lavandula" alt="lavender" title="lavender">
+      <area shape="rect" coords="450,350,550,450" href="https://en.wikipedia.org/wiki/Orange_(fruit)" alt="orange">
+      <area shape="circle" coords="400,250,50" href="https://en.wikipedia.org/wiki/Coffee" alt="Coffee">
+    </map>
 
-    <!-- IMAGE MAP HTML GOES HERE-->
-
-    <!-- CANVAS HTML GOES HERE -->
+    <canvas id="myCanvas" width="500" height="500"></canvas>
   </div>
 
   <script>
-    /* CANVAS JAVASCRIPT GOES HERE */
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#f0f0f0';
+    ctx.fillRect(0, 0, 500, 500);
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'red';
+    ctx.moveTo(100, 100);
+    ctx.lineTo(400, 100);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'blue';
+    ctx.moveTo(400, 100);
+    ctx.lineTo(400, 400);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'green';
+    ctx.moveTo(400, 400);
+    ctx.lineTo(100, 400);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'purple';
+    ctx.moveTo(100, 400);
+    ctx.lineTo(100, 100);
+    ctx.stroke();
   </script>
 </body>
 </html>
